@@ -1,0 +1,51 @@
+[core]
+  editor = nvim
+  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	autocrlf = input
+	excludefiles = /Users/stringhamdb/.gitignore_global
+[diff]
+	tool = nvimdiff
+[difftool]
+	prompt = true
+[difftool "nvimdiff"]
+  cmd = "nvim -d -u ~/.config/nvim/init.vim \"$LOCAL\" \"$REMOTE\""
+[credential]
+	helper = osxkeychain
+[url "https://github.com/"]
+  insteadOf = gh:
+[url "https://gist.github.com/"]
+  insteadOf = gist:
+[url "https://bitbucket.org/"]
+  insteadOf = bb:
+[color]
+  ui = true
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = red
+[user]
+	email = me@donbstringham.com
+	name = Don B. Stringham
+  username = dbs67
+[user-org]
+	email = donbstringham@icloud.com
+	name = Don B. Stringham
+  username = dbs67
+[init]
+	defaultBranch = main
+[lfs]
+	global = /usr/local/bin/git-lfs
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
