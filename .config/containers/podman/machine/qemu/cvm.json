@@ -1,0 +1,99 @@
+{
+ "ConfigPath": {
+  "Path": "/Users/stringhamdb/.config/containers/podman/machine/qemu/cvm.json"
+ },
+ "CmdLine": [
+  "/usr/local/bin/qemu-system-x86_64",
+  "-m",
+  "2048",
+  "-smp",
+  "1",
+  "-fw_cfg",
+  "name=opt/com.coreos/config,file=/Users/stringhamdb/.config/containers/podman/machine/qemu/cvm.ign",
+  "-qmp",
+  "unix:/var/folders/7l/ktfnvw_536vct26gv90rrp2m0000gp/T/podman/qmp_cvm.sock,server=on,wait=off",
+  "-netdev",
+  "socket,id=vlan,fd=3",
+  "-device",
+  "virtio-net-pci,netdev=vlan,mac=5a:94:ef:e4:0c:ee",
+  "-device",
+  "virtio-serial",
+  "-chardev",
+  "socket,path=/var/folders/7l/ktfnvw_536vct26gv90rrp2m0000gp/T/podman/cvm_ready.sock,server=on,wait=off,id=acvm_ready",
+  "-device",
+  "virtserialport,chardev=acvm_ready,name=org.fedoraproject.port.0",
+  "-pidfile",
+  "/var/folders/7l/ktfnvw_536vct26gv90rrp2m0000gp/T/podman/cvm_vm.pid",
+  "-machine",
+  "q35,accel=hvf:tcg",
+  "-cpu",
+  "host",
+  "-virtfs",
+  "local,path=/Users,mount_tag=vol0,security_model=none",
+  "-virtfs",
+  "local,path=/private,mount_tag=vol1,security_model=none",
+  "-virtfs",
+  "local,path=/var/folders,mount_tag=vol2,security_model=none",
+  "-drive",
+  "if=virtio,file=/Users/stringhamdb/.local/share/containers/podman/machine/qemu/cvm_fedora-coreos-38.20230609.2.1-qemu.x86_64.qcow2"
+ ],
+ "Rootful": false,
+ "UID": 502,
+ "HostUserModified": false,
+ "IgnitionFilePath": {
+  "Path": "/Users/stringhamdb/.config/containers/podman/machine/qemu/cvm.ign"
+ },
+ "ImageStream": "testing",
+ "ImagePath": {
+  "Path": "/Users/stringhamdb/.local/share/containers/podman/machine/qemu/cvm_fedora-coreos-38.20230609.2.1-qemu.x86_64.qcow2"
+ },
+ "Mounts": [
+  {
+   "ReadOnly": false,
+   "Source": "/Users",
+   "Tag": "vol0",
+   "Target": "/Users",
+   "Type": "9p"
+  },
+  {
+   "ReadOnly": false,
+   "Source": "/private",
+   "Tag": "vol1",
+   "Target": "/private",
+   "Type": "9p"
+  },
+  {
+   "ReadOnly": false,
+   "Source": "/var/folders",
+   "Tag": "vol2",
+   "Target": "/var/folders",
+   "Type": "9p"
+  }
+ ],
+ "Name": "cvm",
+ "PidFilePath": {
+  "Path": "/var/folders/7l/ktfnvw_536vct26gv90rrp2m0000gp/T/podman/cvm_proxy.pid"
+ },
+ "VMPidFilePath": {
+  "Path": "/var/folders/7l/ktfnvw_536vct26gv90rrp2m0000gp/T/podman/cvm_vm.pid"
+ },
+ "QMPMonitor": {
+  "Address": {
+   "Path": "/var/folders/7l/ktfnvw_536vct26gv90rrp2m0000gp/T/podman/qmp_cvm.sock"
+  },
+  "Network": "unix",
+  "Timeout": 2000000000
+ },
+ "ReadySocket": {
+  "Path": "/var/folders/7l/ktfnvw_536vct26gv90rrp2m0000gp/T/podman/cvm_ready.sock"
+ },
+ "CPUs": 1,
+ "DiskSize": 100,
+ "Memory": 2048,
+ "IdentityPath": "/Users/stringhamdb/.ssh/cvm",
+ "Port": 59409,
+ "RemoteUsername": "core",
+ "Starting": false,
+ "Created": "2023-06-26T13:27:19.539039-06:00",
+ "LastUp": "2023-06-27T12:29:33.48678-06:00"
+}

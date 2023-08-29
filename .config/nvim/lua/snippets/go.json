@@ -1,0 +1,8 @@
+{
+  "single test": {
+    "scope": "go",
+    "prefix": "mtf",
+    "body": "func Test$1(t *testing.T) {\n\t//Arrange\n\t$0\n\t//Act\n\t//Assert\n}",
+    "description": "My snippet for Test function"
+  }
+}
