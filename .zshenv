@@ -5,7 +5,6 @@ MAILCHECK=0
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:~/.local/bin:$PATH
 export PATH="$PATH:/Users/stringhamdb/.dotnet/tools:/usr/local/opt/node@16/bin"
 export ZSH_WAKATIME_PROJECT_DETECTION=true
-export OPENAI_KEY=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
 export LDFLAGS="-L/usr/local/opt/node@16/lib"
 export GOPATH="${HOME}/go"
 
